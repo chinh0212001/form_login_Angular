@@ -37,7 +37,9 @@ export class LoginComponent implements OnInit {
       this.tokenService.setName(data.name);
       this.tokenService.setAvatar(data.avatar);
       this.tokenService.setRole(data.roles);
-      this.router.navigate(['profile'])//dieu huong tu TS ====> component
+      this.router.navigate(['profile']).then(()=>{
+        location.reload();
+      })//dieu huong tu TS ====> component
     }
     // @ts-ignore
     if (data.status == 202){

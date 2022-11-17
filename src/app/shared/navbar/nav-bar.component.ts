@@ -17,13 +17,15 @@ import {MatIconModule} from '@angular/material/icon';
 })
 export class NavBarComponent {
   checkLogin = false;
-  name: any;
+  name: string;
+  avatar: string;
   constructor(private tokenService: TokenService) {
   }
   ngOnInit():void{
     if (this.tokenService.getToken()){
       this.checkLogin = true;
-      this.name = this.tokenService.getName()
+      this.name = this.tokenService.getName();
+      this.avatar = this.tokenService.getAvatar();
     }
   }
 
