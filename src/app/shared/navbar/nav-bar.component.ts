@@ -7,6 +7,8 @@ import {ThemePickerModule} from '../theme-picker';
 import {ThemeStorage} from '../theme-picker/theme-storage/theme-storage';
 import {StyleManager} from '../style-manager';
 import {HttpClientModule} from '@angular/common/http';
+import {TokenService} from '../../service/token.service';
+import {MatIconModule} from '@angular/material/icon';
 
 @Component({
   selector: 'app-navbar',
@@ -14,6 +16,16 @@ import {HttpClientModule} from '@angular/common/http';
   styleUrls: ['./nav-bar.component.scss']
 })
 export class NavBarComponent {
+  checkLogin = false;
+  name: any;
+  constructor(private tokenService: TokenService) {
+  }
+  ngOnInit():void{
+    if (this.tokenService.getToken()){
+      this.checkLogin = true;
+      this.name = this.tokenService.getName()
+    }
+  }
 
 }
 
@@ -25,6 +37,7 @@ export class NavBarComponent {
     MatMenuModule,
     RouterModule,
     ThemePickerModule,
+    MatIconModule,
   ],
   exports: [NavBarComponent],
   declarations: [NavBarComponent],

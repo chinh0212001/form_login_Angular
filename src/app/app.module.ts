@@ -24,6 +24,8 @@ import {FooterModule} from './shared/footer';
 import { RegisterComponent } from './form-login/register/register.component';
 import {MatInputModule} from '@angular/material/input';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { LoginComponent } from './form-login/login/login.component';
+import { ProfileComponent } from './form-login/profile/profile/profile.component';
 
 export const appRoutes: Routes = [
   { path: '', component: HomeComponent, data: { title: 'Home' } },
@@ -32,11 +34,13 @@ export const appRoutes: Routes = [
     component: GettingStartedComponent,
     data: { title: 'Getting Started' }
   },
-  { path: 'register', component: RegisterComponent}
+  { path: 'register', component: RegisterComponent},
+  {path: 'login',component: LoginComponent},
+  {path:'profile', component:ProfileComponent}
 ];
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, GettingStartedComponent, RegisterComponent],
+  declarations: [AppComponent, HomeComponent, GettingStartedComponent, RegisterComponent, LoginComponent, ProfileComponent],
   imports: [
     HttpClientModule,
     BrowserModule,
