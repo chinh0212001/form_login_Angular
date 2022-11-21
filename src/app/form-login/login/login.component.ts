@@ -14,7 +14,7 @@ export class LoginComponent implements OnInit {
   form: any = {};
   hide =true;
   signInForm: SignForm;
-  status = 'please fill in the form login!';
+  status = '';
 
   constructor(private authService: AuthService,
               private tokenService : TokenService,
