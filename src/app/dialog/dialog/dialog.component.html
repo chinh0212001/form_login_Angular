@@ -1,15 +1,13 @@
 <div class="container">
     <div class="row">
         <div class="col-12" style="margin-top: 20px">
+            <mat-error class="alert alert-primary"> Update Avatar success!</mat-error>
+            <br> <br>
             <mat-card style="margin: 50px">
-                <h1>welcome profile</h1>
-                <button mat-stroked-button color="primary" class="mat-button-toggle-group btn-outline-danger" (click)="logOut()">logOut
+                <button (click)="reload()" mat-stroked-button color="primary" class="mat-button-toggle-group btn-outline-danger">oki
                     <mat-icon color="accent" matSuffix >logOut</mat-icon>
                 </button>
-                <router-outlet></router-outlet>
             </mat-card>
-
         </div>
     </div>
-
 </div>

@@ -5,6 +5,7 @@ import {SignUpForm} from '../model/SignUpForm';
 import {Observable} from 'rxjs';
 import {JwtResponse} from '../model/JwtResponse';
 import {SignForm} from '../model/SignForm';
+import {ChangeAvatar} from '../model/change-avatar';
 
 @Injectable({
   providedIn: 'root'
@@ -16,6 +17,7 @@ export class AuthService {
   //server
   private API_SIGNUP = environment.API_SERVE+ "signup";
   private API_SIGNIN = environment.API_SERVE+ "signin";
+  private API_UPDATE_AVATAR = environment.API_SERVE + 'change/avatar';
   constructor(private http: HttpClient) {
 
   }
@@ -24,5 +26,8 @@ export class AuthService {
   }
   signIn(signInForm: SignForm): Observable<JwtResponse>{
     return this.http.post<JwtResponse>(this.API_SIGNIN,signInForm);
+  }
+  updateAvatar(changeAvatar: ChangeAvatar):Observable<any>{
+    return this.http.put(this.API_UPDATE_AVATAR,changeAvatar);
   }
 }
