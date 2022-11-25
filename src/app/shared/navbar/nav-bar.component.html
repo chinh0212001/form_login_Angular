@@ -23,6 +23,14 @@
     <span>{{name}}</span>
     <mat-icon color="accent" matPrefix>add_reaction</mat-icon>
   </a>
+  <a  mat-button class="docs-button" routerLink="listCategory" aria-label="Angular Material">
+    <span>Category</span>
+    <mat-icon color="accent" matPrefix>expand_circle_down</mat-icon>
+<!--    <select>-->
+<!--      <option>danh sach category</option>-->
+<!--      <option>create category</option>-->
+<!--    </select>-->
+  </a>
   <div class="flex-spacer"></div>
   <img routerLink="profile/update/avatar" *ngIf="checkLogin" style="width: 50px; height: 50px; border-radius: 50%" src="{{avatar}}" alt="">
   <app-theme-picker></app-theme-picker>

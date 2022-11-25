@@ -4,7 +4,10 @@
             <mat-card style="margin: 50px">
                 <h1>welcome profile</h1>
                 <button mat-stroked-button color="primary" class="mat-button-toggle-group btn-outline-danger" (click)="logOut()">logOut
-                    <mat-icon color="accent" matSuffix >logOut</mat-icon>
+                    <mat-icon color="accent" matSuffix >logout</mat-icon>
+                </button>
+                <button *ngIf="checkAdmin" routerLink="admin" mat-stroked-button color="primary" class="mat-button-toggle-group btn-outline-danger">Admin_Manager
+                    <mat-icon color="accent" matSuffix >manager_account</mat-icon>
                 </button>
                 <router-outlet></router-outlet>
             </mat-card>

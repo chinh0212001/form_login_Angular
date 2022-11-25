@@ -17,7 +17,7 @@ export class AdminGuard implements CanActivate {
       if (JSON.stringify(this.tokenService.getRole())==JSON.stringify(['ADMIN'])){
         return true;
       }else {
-        alert("ko co quyen cua admin");
+        alert("mày có phải admin đéo đâu mà đòi truy cập?");
         this.router.navigate(['']);
       }
     }else {

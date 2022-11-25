@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, Validators} from '@angular/forms';
-import {validate} from 'codelyzer/walkerFactory/walkerFn';
 import {AuthService} from '../../service/auth.service';
 import {SignUpForm} from '../../model/SignUpForm';
 import {Router} from '@angular/router';

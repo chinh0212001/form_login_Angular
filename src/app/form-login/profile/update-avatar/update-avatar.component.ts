@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import {ChangeAvatar} from '../../../model/change-avatar';
 import {AuthService} from '../../../service/auth.service';
 import {TokenService} from '../../../service/token.service';
-import {$e} from 'codelyzer/angular/styles/chars';
 import {MatDialog} from '@angular/material/dialog';
 import {DialogComponent} from '../../../dialog/dialog/dialog.component';
 
