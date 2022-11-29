@@ -30,7 +30,7 @@ import { ParentInputComponent } from './input/parent-input/parent-input.componen
 import { ChildInputComponent } from './input/child-input/child-input.component';
 import { ParentOutputComponent } from './output/parent-output/parent-output.component';
 import { ChildOutputComponent } from './output/child-output/child-output.component';
-import {AngularFireStorage, AngularFireStorageModule} from '@angular/fire/storage';
+import {AngularFireStorageModule} from '@angular/fire/storage';
 import {AngularFireModule} from '@angular/fire';
 import {environment} from '../environments/environment.prod';
 import { SingerAvatarComponent } from './upload/singer-avatar/singer-avatar.component';
@@ -39,7 +39,7 @@ import { MutilpleAvatarComponent } from './upload/mutilple-avatar/mutilple-avata
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {AuthInterceptor} from './service/auth.interceptor';
 import { UpdateAvatarComponent } from './form-login/profile/update-avatar/update-avatar.component';
-import {MatDialog, MatDialogModule} from '@angular/material/dialog';
+import { MatDialogModule} from '@angular/material/dialog';
 import { DialogComponent } from './dialog/dialog/dialog.component';
 import {AuthGuard} from './seccurity/auth.guard';
 import { AdminManagerComponent } from './form-login/profile/admin-manager/admin-manager.component';
@@ -48,6 +48,8 @@ import { CategoryComponent } from './category/category/category.component';
 import { ListCategoriesComponent } from './category/list-categories/list-categories.component';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatTableModule} from '@angular/material/table';
+import { DialogCategoryComponent } from './dialog/dialog-category/dialog-category.component';
+import { UpdateCategoryComponent } from './category/update-category/update-category.component';
 
 export const appRoutes: Routes = [
   { path: '', component: HomeComponent, data: { title: 'Home' } },
@@ -64,11 +66,13 @@ export const appRoutes: Routes = [
     {path:'admin', component:AdminManagerComponent, canActivate:[AdminGuard]}
   ]},
   {path: 'create-category', component:CategoryComponent, canActivate:[AuthGuard]},
-  {path:'listCategory',component:ListCategoriesComponent}
+  {path:'listCategory',component:ListCategoriesComponent},
+  {path:'update-category/:id',component:UpdateCategoryComponent}
+
 ];
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, GettingStartedComponent, RegisterComponent, LoginComponent, ProfileComponent, ParentInputComponent, ChildInputComponent, ParentOutputComponent, ChildOutputComponent, SingerAvatarComponent, MutilpleAvatarComponent, UpdateAvatarComponent, DialogComponent, AdminManagerComponent, CategoryComponent, ListCategoriesComponent],
+  declarations: [AppComponent, HomeComponent, GettingStartedComponent, RegisterComponent, LoginComponent, ProfileComponent, ParentInputComponent, ChildInputComponent, ParentOutputComponent, ChildOutputComponent, SingerAvatarComponent, MutilpleAvatarComponent, UpdateAvatarComponent, DialogComponent, AdminManagerComponent, CategoryComponent, ListCategoriesComponent, DialogCategoryComponent, UpdateCategoryComponent,],
   imports: [
     HttpClientModule,
     BrowserModule,

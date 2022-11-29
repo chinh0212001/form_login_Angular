@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row">
         <div class="col-12" style="margin-top: 20px">
-            <mat-card style="margin: 50px">
+            <mat-card style="margin: 50px ">
                 <mat-error *ngIf="!check" class="alert alert-primary"> Please choose File to update</mat-error>
                 <app-singer-avatar (urlFormFirebase)="changeAvatar($event)"></app-singer-avatar>
             </mat-card>

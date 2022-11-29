@@ -8,13 +8,21 @@ import {HttpClient} from '@angular/common/http';
   providedIn: 'root'
 })
 export class CategoryService {
-  private API_CATEGORY = environment.API_LOCAL+ 'create-category';
-  private API_LIST_CATEGORY = environment.API_LOCAL+'list';
+  private API_CATEGORY = environment.API_LOCAL+ 'categories';
   constructor(private http:HttpClient) { }
   createCate(cate:Cate):Observable<any>{
     return this.http.post(this.API_CATEGORY,cate);
   }
-  showListCategory():Observable<any>{
-    return this.http.get(this.API_LIST_CATEGORY);
+  showListCategory(){
+    return this.http.get(this.API_CATEGORY);
+  }
+  deleteCategory(id: number):Observable<any>{
+    return this.http.delete(this.API_CATEGORY+'/'+id);
+  }
+  updateCategory(id:number, category: Cate):Observable<Cate>{
+    return this.http.put<Cate>(this.API_CATEGORY+'/'+id, category)
+  }
+  detailCategory(id: number): Observable<any>{
+    return this.http.get(this.API_CATEGORY+'/'+id);
   }
 }

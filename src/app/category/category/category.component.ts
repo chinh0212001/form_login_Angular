@@ -41,6 +41,7 @@ cate: Cate
   })
   }
   createAvatar($event: string) {
+
     this.form.avatar = $event
   }
 }
